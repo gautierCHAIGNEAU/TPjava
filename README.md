@@ -176,7 +176,9 @@ Via une invite de commande et pour chaque service, se placer à la racine du ser
 ### Remarques / Recommendations
 
 Long et fastidieux de lancer chaque services un par un. Non adapté à des postes à performance médiocre.
+
 Exemple : Lors de la création d'un compte sur lapage cliente, plusieurs clic consécutifs sur le bouton "submit" ajoute plusieurs fois le compte en base de données.
+
 Hypothèses : performances du serveur host inadaptées
 
 ## Build Docker
@@ -186,12 +188,14 @@ Build de l'application avec un terminal Docker
 ### Execution
 
 Via une invite de commande, se placer à la racine du projet et taper : ./mvnw clean install -PbuildDocker
+
 Ensuite, taper : docker-compose up
 
 ### Remarques / Recommendations
 
 Le build des images s'est correctement déroulé mais erreur lors du docker-compose pour chaque service :
 	Problem with dial: dial tcp 172.20.0.6:8761: connect: connection refused
+
 Hypothèses : Port fermé sur le serveur host, ip non équivalente au localhost (127.0.0.1)
 
 
